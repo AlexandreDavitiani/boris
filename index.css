@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('./reset.css');
+@import url('./header.css');
+@import url('./section.css');
+@import url('./login.css');
+@import url('./section-info.css');
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+input,
+label,
+a,
+p {
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Прячем все элементы, кроме первого */
+.section-item.hidden {
+    display: none;
+}
+
+/* Плавное появление для скрытых элементов */
+.section-item.fade-in {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Стиль для кнопки "Посмотреть еще" */
+.load-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: white;
+    border: 1px solid #4A93FF;
+    color: #4A93FF;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.load-more-button:hover {
+    background-color: #4A93FF;
+    color: white;
+}
+
+/* Медиазапрос для мобильных устройств */
+@media screen and (max-width: 767px) {
+    /* Используем flexbox для управления порядком элементов */
+    .section-items {
+        display: flex;
+        flex-direction: column; /* Элементы в колонку */
+    }
+
+    /* Позиционирование кнопки внизу */
+    .load-more-button {
+        order: 2; /* Это сделает так, что кнопка будет под списком */
+        margin-top: 20px;
+        margin-bottom: 20px;
+        align-self: flex-start; /* Расположить кнопку после списка */
+    }
+
+    /* Выставим элементы списка по порядку */
+    .section-item {
+        margin-bottom: 10px; /* Добавим небольшой отступ между пунктами */
+    }
+}
+,>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  margin-bottom: 3%;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0;
+}
+
+.header-nav-link {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+.section-info-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.section-info-desc {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+
+ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+strong {
+  font-weight: 600;
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .section-info-title {
+    font-size: 22px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+}
